@@ -16,6 +16,7 @@
 		C6145AFC293498A600BC29EE /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6145AFB293498A600BC29EE /* HomeVC.swift */; };
 		C6145AFE293498BE00BC29EE /* SearchVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6145AFD293498BE00BC29EE /* SearchVC.swift */; };
 		C6145B00293498C800BC29EE /* ProfileVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6145AFF293498C800BC29EE /* ProfileVC.swift */; };
+		C6145B072934B16800BC29EE /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6145B062934B16800BC29EE /* UIHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		C6145AFB293498A600BC29EE /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 		C6145AFD293498BE00BC29EE /* SearchVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchVC.swift; sourceTree = "<group>"; };
 		C6145AFF293498C800BC29EE /* ProfileVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileVC.swift; sourceTree = "<group>"; };
+		C6145B062934B16800BC29EE /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		C6145AE42934971A00BC29EE /* UIKit-InstagramClone */ = {
 			isa = PBXGroup;
 			children = (
+				C6145B052934B15F00BC29EE /* Helper */,
 				C6145B0129349C0000BC29EE /* Views */,
 				C6145AFA2934979E00BC29EE /* Screens */,
 				C6145AF92934976A00BC29EE /* Support */,
@@ -96,8 +99,24 @@
 		C6145B0129349C0000BC29EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C6145B042934AA9200BC29EE /* Home */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C6145B042934AA9200BC29EE /* Home */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C6145B052934B15F00BC29EE /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				C6145B062934B16800BC29EE /* UIHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -177,6 +196,7 @@
 				C6145AFC293498A600BC29EE /* HomeVC.swift in Sources */,
 				C6145AE62934971A00BC29EE /* AppDelegate.swift in Sources */,
 				C6145AE82934971A00BC29EE /* SceneDelegate.swift in Sources */,
+				C6145B072934B16800BC29EE /* UIHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
