@@ -9,8 +9,29 @@ import UIKit
 
 class FeedVC: UIViewController {
 
+    var tableView: UITableView!
+
+    var followers: [User]!
+
+    init(followers: [User]!) {
+        super.init(nibName: nil, bundle: nil)
+        self.followers = followers
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .cyan
+        configureTableView()
+    }
+}
+
+private extension FeedVC {
+    func configureTableView() {
+        tableView = UITableView(frame: view.bounds, style: .plain)
+        tableView.backgroundColor = .cyan
+        view.addSubview(tableView)
     }
 }

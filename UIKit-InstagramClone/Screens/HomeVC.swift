@@ -76,8 +76,8 @@ private extension HomeVC {
     }
 
     func configureUIElements(with user: User) {
-        add(childVC: StoryVC(), to: storyView)
-        add(childVC: FeedVC(), to: feedView)
+        add(childVC: StoryVC(followers: user.followers), to: storyView)
+        add(childVC: FeedVC(followers: user.followers), to: feedView)
     }
 
     func add(childVC: UIViewController, to container: UIView) {
