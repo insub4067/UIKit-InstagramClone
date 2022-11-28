@@ -9,22 +9,29 @@ import UIKit
 
 class HomeVC: UIViewController {
 
+    let logoImage = UIBarButtonItem()
+    let barItemOne = UIBarButtonItem()
+    let barItemTwo = UIBarButtonItem()
+    let barItemThree = UIBarButtonItem()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
-
-        
+        setNavigationBarItems()
     }
-    
+}
 
-    /*
-    // MARK: - Navigation
+private extension HomeVC {
+    func setNavigationBarItems() {
+        barItemOne.image = UIImage(systemName: "plus.square")
+        barItemOne.tintColor = .label
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        barItemTwo.image = UIImage(systemName: "heart")
+        barItemTwo.tintColor = .label
+
+        barItemThree.image = UIImage(systemName: "location")
+        barItemThree.tintColor = .label
+
+        navigationItem.rightBarButtonItems = [barItemThree, barItemTwo, barItemOne]
     }
-    */
-
 }
