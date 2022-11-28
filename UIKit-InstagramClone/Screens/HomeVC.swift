@@ -12,6 +12,9 @@ class HomeVC: UIViewController {
     var collectionView: UICollectionView!
     var tableView: UITableView!
 
+    let storyView = UIView()
+    let feedView = UIView()
+
     var barItemOne: UIBarButtonItem!
     var barItemTwo: UIBarButtonItem!
     var barItemThree: UIBarButtonItem!
@@ -21,8 +24,8 @@ class HomeVC: UIViewController {
         view.backgroundColor = .systemBackground
         
         configureNavigationItems()
-        configureCollectionView()
-        configureTableView()
+        layoutUI()
+        getUserInfo()
     }
 }
 
@@ -45,6 +48,48 @@ private extension HomeVC {
         navigationItem.rightBarButtonItems = buttons
     }
 
+    func layoutUI() {
+        view.addSubview(storyView)
+        view.addSubview(feedView)
+
+        storyView.translatesAutoresizingMaskIntoConstraints = false
+        feedView.translatesAutoresizingMaskIntoConstraints = false
+
+        let guide = self.view.safeAreaLayoutGuide
+
+        NSLayoutConstraint.activate([
+            storyView.topAnchor.constraint(equalTo: guide.topAnchor),
+            storyView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            storyView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            storyView.heightAnchor.constraint(equalToConstant: 80),
+
+            feedView.topAnchor.constraint(equalTo: storyView.bottomAnchor),
+            feedView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            feedView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            feedView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+
+    func getUserInfo() {
+        let user = NetworkManager.shared.getUserInfo()
+        configureUIElements(with: user)
+    }
+
+    func configureUIElements(with user: User) {
+        add(childVC: StoryVC(), to: storyView)
+        add(childVC: FeedVC(), to: feedView)
+    }
+
+    func add(childVC: UIViewController, to container: UIView) {
+        addChild(childVC)
+        container.addSubview(childVC.view)
+        childVC.view.frame = container.bounds
+        childVC.didMove(toParent: self)
+    }
+}
+
+
+extension HomeVC {
     func configureCollectionView() {
         let frame = CGRect(x: 0, y: 0, width: view.frame.width, height: 80)
 
