@@ -14,4 +14,11 @@ enum UIHelper {
         layout.itemSize = CGSize(width: 40, height: 40)
         return  layout
     }
+
+    static func createHomeFeedLayout(in superview: UIView) -> UICollectionViewFlowLayout {
+        let layout = UICollectionViewFlowLayout()
+        let width = superview.frame.width
+        layout.itemSize = CGSize(width: width, height: width + 200)
+        return layout
+    }
 }
